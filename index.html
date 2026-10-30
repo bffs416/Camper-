@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Técnico y Centro de Control — Camper Taller Mazda T</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar de Navegación Estilo Manual Técnico -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge">MANUAL TÉCNICO • RETIE</div>
+        <h2>Mazda T Camper</h2>
+        <p class="brand-sub">Taller Móvil • Arquitectura 48V</p>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="tab-datasheets">
+          <span class="icon">📑</span> Cap. 1: Equipos Oficiales
+        </button>
+        <button class="nav-item" data-tab="tab-diagrams">
+          <span class="icon">📐</span> Cap. 2: Diagramas & Gráficas
+        </button>
+        <button class="nav-item" data-tab="tab-overview">
+          <span class="icon">⚡</span> Cap. 3: Esquema Split-Phase
+        </button>
+        <button class="nav-item" data-tab="tab-simulator">
+          <span class="icon">🔋</span> Cap. 4: Simulador Autonomía
+        </button>
+        <button class="nav-item" data-tab="tab-loads">
+          <span class="icon">📊</span> Cap. 5: Tabla de Cargas (30)
+        </button>
+        <button class="nav-item" data-tab="tab-technical">
+          <span class="icon">🛡️</span> Cap. 6: Blindaje & Breakers
+        </button>
+        <button class="nav-item" data-tab="tab-rescue">
+          <span class="icon">🔌</span> Cap. 7: Carga Rápida 220V
+        </button>
+        <button class="nav-item" data-tab="tab-suppliers">
+          <span class="icon">🏪</span> Cap. 8: Proveedores Locales
+        </button>
+        <button class="nav-item" data-tab="tab-links-media">
+          <span class="icon">🔗</span> Cap. 9: Enlaces & Galería
+        </button>
+      </nav>
+
+      <div class="battery-status-card">
+        <div class="bat-header">
+          <span>MUST LP16-48200 LiFePO4</span>
+          <span class="badge-success">10.240 Wh</span>
+        </div>
+        <div class="bat-metric">
+          <span class="bat-val">51.2V</span>
+          <span class="bat-sub">200Ah • BMS 150A</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+      <!-- Header Superior -->
+      <header class="top-header">
+        <div class="header-titles">
+          <h1 id="page-title">Capítulo 1: Equipos Oficiales Verificados</h1>
+          <p id="page-subtitle">Memoria técnica definitiva y hojas de datos verificadas del fabricante</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" id="btn-export-data">📥 Exportar Respaldo JSON</button>
+          <button class="btn btn-primary" id="btn-quick-calc">⚡ Protocolo 220V</button>
+        </div>
+      </header>
+
+      <!-- TAB 1: CAPÍTULO 1 - EQUIPOS OFICIALES Y DATASHEETS -->
+      <section id="tab-datasheets" class="tab-pane active">
+        <div class="section-top-bar">
+          <div>
+            <h3>Fichas Técnicas Verificadas del Sistema Central</h3>
+            <p class="section-sub">Parámetros oficiales de los componentes maestros aprobados para la compra.</p>
+          </div>
+        </div>
+
+        <div class="datasheets-grid">
+          <!-- Inversor MUST PV3300 TLV -->
+          <div class="ds-card highlight-border">
+            <div class="ds-header">
+              <span class="tag tag-ac">Inversor Cargador Híbrido</span>
+              <span class="ds-brand">MUST POWER</span>
+            </div>
+            <h4>MUST PV33-6048 TLV (Fase Dividida)</h4>
+            <p class="ds-desc">Baja frecuencia con transformador toroidal de cobre. Salidas simultáneas 110V/120V y 220V/240V.</p>
+            
+            <div class="ds-specs-grid">
+              <div class="ds-spec-item">
+                <span class="ds-k">Potencia Nominal</span>
+                <span class="ds-v">6.000 W (6 kW)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Pico de Arranque (Surge)</span>
+                <span class="ds-v text-cyan">18.000 VA (18 kVA)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Salidas AC</span>
+                <span class="ds-v">HOT1-N (110V) | HOT2-N (110V) | HOT1-HOT2 (220V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Cargador Solar MPPT</span>
+                <span class="ds-v">80A integrado (Rango 60V–230V DC)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voc Máximo Admisible</span>
+                <span class="ds-v">245 V DC</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Entrada AC (Red / Taller)</span>
+                <span class="ds-v">200V / 220V / 240VAC (Carga 40A @ 48V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Comunicación BMS</span>
+                <span class="ds-v">Puerto CAN Bus Integrado</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Dimensiones y Peso</span>
+                <span class="ds-v">362 × 544 × 188 mm (~45 kg)</span>
+              </div>
+            </div>
+
+            <div class="ds-terminals">
+              <h5>Bornera Posterior Numerada Oficial:</h5>
+              <ol class="terminals-list">
+                <li><strong>BAT -/+:</strong> Bornes de alta potencia para cable 2/0 AWG a barras de 48V.</li>
+                <li><strong>PV -/+:</strong> Entrada para los 2 Paneles Osda 720W en Serie (2S).</li>
+                <li><strong>HOT1 - HOT2 (220VAC):</strong> Salida bifásica para Estufa Inducción 3.6kW y Aire 220V.</li>
+                <li><strong>HOT1 - N (110VAC):</strong> Salida Fase 1 para tomas de Taller (Soldadora, Sierra, Horno).</li>
+                <li><strong>HOT2 - N (110VAC):</strong> Salida Fase 2 para Cómputo (PC Gamer, Nevera).</li>
+                <li><strong>AC Input HOT1-HOT2:</strong> Entrada obligatoria de 220V para rescate con NEMA 14-30P.</li>
+                <li><strong>BAT CAN:</strong> Enlace de datos directo con el BMS de la batería LP1600.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Batería Litio MUST LP1600 -->
+          <div class="ds-card">
+            <div class="ds-header">
+              <span class="tag tag-dc">Banco de Almacenamiento</span>
+              <span class="ds-brand">MUST POWER</span>
+            </div>
+            <h4>Batería LiFePO4 MUST LP16-48200</h4>
+            <p class="ds-desc">Fosfato de Hierro y Litio de grado industrial en gabinete de acero laminado SPCC.</p>
+            
+            <div class="ds-specs-grid">
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje y Capacidad</span>
+                <span class="ds-v">51.2 V / 200 Ah</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Energía Almacenada</span>
+                <span class="ds-v text-green">10.240 Wh (10.24 kWh)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Descarga Continua Máx.</span>
+                <span class="ds-v">150 A (~7.600W de entrega continua)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Vida Útil (Ciclos)</span>
+                <span class="ds-v">6.000 Ciclos al 80% DOD (25°C)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje Recomendado Carga</span>
+                <span class="ds-v">58.4 V DC (Corte BMS: 58.4V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje Fin de Descarga</span>
+                <span class="ds-v">44.0 V DC (Corte BMS: 44.0V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Protección Incorporada</span>
+                <span class="ds-v">Disyuntor magnetotérmico (Air Breaker) frontal</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Dimensiones y Peso</span>
+                <span class="ds-v">686.5 × 442 × 250 mm (80.00 kg)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paneles Solares Osda 720W -->
+          <div class="ds-card">
+            <div class="ds-header">
+              <span class="tag tag-ac">Línea Solar Principal (MUST)</span>
+              <span class="ds-brand">OSDA SOLAR</span>
+            </div>
+            <h4>2x Paneles Osda TOPCon Bifaciales 730W (1.460Wp)</h4>
+            <p class="ds-desc">Monocristalino N-Type TOPCon Bifacial (Emergente Energía Colombia). En serie (2S) directo al MPPT 80A del MUST.</p>
+            
+            <div class="ds-specs-grid">
+              <div class="ds-spec-item">
+                <span class="ds-k">Potencia Total (2S)</span>
+                <span class="ds-v">1.460 Wp (~5.250 Wh/d)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje de Trabajo (Vmp)</span>
+                <span class="ds-v">83.20 V DC</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje Circuito Abierto</span>
+                <span class="ds-v">99.40 V DC (Máx inversor: 245V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Corriente Máx. (Imp)</span>
+                <span class="ds-v">17.65 A</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Proveedor Oficial</span>
+                <span class="ds-v text-cyan">Emergente Energía Sostenible</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Configuración</span>
+                <span class="ds-v">Estrictamente en Serie (2S)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Línea Solar Secundaria MPPT Boost 500W -->
+          <div class="ds-card highlight-border">
+            <div class="ds-header">
+              <span class="tag tag-dc">Línea Solar Secundaria (Boost)</span>
+              <span class="ds-brand">RESTAR & AMAZON</span>
+            </div>
+            <h4>1x Panel Restar 460W + MPPT BOOST 500W</h4>
+            <p class="ds-desc">Panel monocristalino Restar 460W (Emergente Energía) + regulador elevador MPPT Boost (B0GPQX7TS1). Eleva 35V-41V a 58.4V para litio.</p>
+            
+            <div class="ds-specs-grid">
+              <div class="ds-spec-item">
+                <span class="ds-k">Tecnología</span>
+                <span class="ds-v text-cyan">MPPT BOOST (Elevador Step-Up)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje de Entrada (Panel)</span>
+                <span class="ds-v">18V a 50V DC (Panel 450W: 41.18V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Voltaje de Salida (Batería)</span>
+                <span class="ds-v">48V / 58.4V DC (Configurable Litio LFP)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Potencia Máxima</span>
+                <span class="ds-v">500 W (Aporte: ~8.5A continuos a 48V)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Conexión al Sistema</span>
+                <span class="ds-v">Directo a Barras Busbars 48V (Fusible 15A)</span>
+              </div>
+              <div class="ds-spec-item">
+                <span class="ds-k">Operación en Paralelo</span>
+                <span class="ds-v">100% independiente del MUST y Victron</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: CAPÍTULO 2 - DIAGRAMAS TÉCNICOS & GRÁFICAS -->
+      <section id="tab-diagrams" class="tab-pane">
+        <div class="section-top-bar">
+          <div>
+            <h3>Diagramas Esquemáticos & Curvas Técnicas de Ingeniería</h3>
+            <p class="section-sub">Representación gráfica unifilar, distribución de cargas y curvas de potencia generadas para la camper.</p>
+          </div>
+        </div>
+
+        <!-- 1. Diagrama Unifilar Arquitectura Global SVG -->
+        <div class="diagram-card">
+          <div class="diagram-card-header">
+            <h4>📐 Diagrama Unifilar Arquitectura 48V / Split-Phase (Master Single-Line)</h4>
+            <span class="pill">Norma RETIE / Grado Marino</span>
+          </div>
+          <div class="svg-diagram-wrapper">
+            <svg class="tech-svg" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fondos de Zonas -->
+              <rect x="20" y="20" width="300" height="480" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-dasharray="4 4"/>
+              <text x="35" y="45" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#64748b">ZONA GENERACIÓN (TECHO & MOTOR)</text>
+
+              <rect x="340" y="20" width="320" height="480" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+              <text x="355" y="45" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#09090b">SISTEMA CENTRAL 48V (MUST + LITIO)</text>
+
+              <rect x="680" y="20" width="300" height="480" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-dasharray="4 4"/>
+              <text x="695" y="45" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#64748b">DISTRIBUCIÓN AC & DC (TALLER/CASA)</text>
+
+              <!-- Bloque Paneles Osda -->
+              <rect x="40" y="70" width="260" height="60" rx="6" fill="#09090b"/>
+              <text x="55" y="95" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#ffffff">2x PANELES OSDA 720W (2S)</text>
+              <text x="55" y="115" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">1.440Wp • 82V Vmp • 98.2V Voc</text>
+
+              <!-- Línea PV a Inversor -->
+              <path d="M 300 100 L 400 100" stroke="#09090b" stroke-width="2.5" fill="none"/>
+              <rect x="330" y="88" width="40" height="24" rx="4" fill="#ffffff" stroke="#09090b" stroke-width="1.5"/>
+              <text x="335" y="104" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">16A PV</text>
+
+              <!-- Bloque Panel 450W + Boost -->
+              <rect x="40" y="160" width="260" height="65" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+              <text x="55" y="185" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#09090b">1x PANEL 450W + MPPT BOOST 500W</text>
+              <text x="55" y="205" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Eleva 35V-41V ➡️ 58.4V Litio (B0GPQX7TS1)</text>
+
+              <!-- Bloque Alternador Mazda T -->
+              <rect x="40" y="255" width="260" height="65" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+              <text x="55" y="280" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#09090b">ALTERNADOR 12V MAZDA T4.5</text>
+              <text x="55" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Victron Orion-Tr 12/48-8A (380W)</text>
+
+              <!-- Cable de Rescate 220V -->
+              <rect x="40" y="350" width="260" height="60" rx="6" fill="#ffffff" stroke="#09090b" stroke-width="1.5"/>
+              <text x="55" y="375" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#09090b">RESCATE CARRETERA (NEMA 14-30P)</text>
+              <text x="55" y="395" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Toma 220V Montallantas • 4x10 AWG</text>
+
+              <!-- Inversor MUST 6kW Central -->
+              <rect x="400" y="70" width="240" height="150" rx="8" fill="#09090b"/>
+              <text x="420" y="100" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#ffffff">INVERSOR MUST PV33-6048 TLV</text>
+              <text x="420" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">6.000W Continuos • 18 kVA Pico</text>
+              <text x="420" y="140" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Baja Frecuencia • MPPT 80A 245V</text>
+              <text x="420" y="160" font-family="'JetBrains Mono', monospace" font-size="10" fill="#a7f3d0">Split Phase: HOT1 (110V) | HOT2 (110V) | 220V</text>
+              <text x="420" y="180" font-family="'JetBrains Mono', monospace" font-size="10" fill="#fde68a">CAN Bus Enlace Smart BMS</text>
+
+              <!-- Busbars de 48V Centrales -->
+              <rect x="400" y="250" width="240" height="16" rx="3" fill="#dc2626"/>
+              <text x="450" y="262" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" fill="#ffffff">BUSBAR POSITIVA (+) 250A</text>
+
+              <rect x="400" y="275" width="240" height="16" rx="3" fill="#18181b"/>
+              <text x="450" y="287" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" fill="#ffffff">BUSBAR NEGATIVA (-) 250A</text>
+
+              <!-- Batería Litio MUST LP1600 -->
+              <rect x="400" y="330" width="240" height="130" rx="8" fill="#f8fafc" stroke="#09090b" stroke-width="2"/>
+              <text x="420" y="360" font-family="'Outfit', sans-serif" font-size="13" font-weight="800" fill="#09090b">BATERÍA MUST LP16-48200</text>
+              <text x="420" y="380" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#16a34a">10.240 Wh • 51.2V 200Ah</text>
+              <text x="420" y="400" font-family="'JetBrains Mono', monospace" font-size="10" fill="#475569">BMS 150A Cont. • Corte: 44V / 58.4V</text>
+              <text x="420" y="420" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Fusible Clase T 250A a &lt;30cm • Cable 2/0</text>
+
+              <!-- Líneas a Tablero AC -->
+              <!-- 220V -->
+              <path d="M 640 100 L 700 100" stroke="#b91c1c" stroke-width="3" fill="none"/>
+              <rect x="700" y="75" width="260" height="50" rx="6" fill="#fef2f2" stroke="#fee2e2"/>
+              <text x="715" y="96" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#b91c1c">SALIDA 220V (HOT1 - HOT2)</text>
+              <text x="715" y="114" font-family="'JetBrains Mono', monospace" font-size="10" fill="#475569">Estufa Inducción 3.6kW + Aire Inverter 12k</text>
+
+              <!-- HOT1 110V Taller -->
+              <path d="M 640 140 L 700 140" stroke="#09090b" stroke-width="2.5" fill="none"/>
+              <rect x="700" y="135" width="260" height="50" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="715" y="156" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#09090b">FASE 1: HOT1 - N (110V TALLER)</text>
+              <text x="715" y="174" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Soldadora MIG, Sierra 7-1/4", Horno (GFCI 20A)</text>
+
+              <!-- HOT2 110V Cómputo -->
+              <path d="M 640 180 L 700 180" stroke="#09090b" stroke-width="2.5" fill="none"/>
+              <rect x="700" y="195" width="260" height="50" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="715" y="216" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#09090b">FASE 2: HOT2 - N (110V CÓMPUTO)</text>
+              <text x="715" y="234" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">PC Gamer RTX 5080, 3 Monitores, Nevera</text>
+
+              <!-- DC Nativo 48V y 12V -->
+              <path d="M 640 260 L 700 260" stroke="#16a34a" stroke-width="2" fill="none"/>
+              <rect x="700" y="255" width="260" height="50" rx="6" fill="#f0fdf4" stroke="#dcfce7"/>
+              <text x="715" y="276" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#15803d">STARLINK GEN 3 NATIVO (48V)</text>
+              <text x="715" y="294" font-family="'JetBrains Mono', monospace" font-size="10" fill="#166534">Inyector YAOSHENG directo (Inversor OFF)</text>
+
+              <rect x="700" y="315" width="260" height="50" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+              <text x="715" y="336" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#09090b">CAJA 12V GaRhomxy (24/7)</text>
+              <text x="715" y="354" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Reductor 48V/12V 20A • Cámara Imou, Luces</text>
+
+              <!-- Enlace CAN -->
+              <path d="M 520 220 L 520 330" stroke="#0284c7" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+              <rect x="490" y="290" width="60" height="20" rx="3" fill="#e0f2fe" stroke="#bae6fd"/>
+              <text x="498" y="304" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#0369a1">CAN BUS</text>
+
+              <!-- Conexión a Busbar del inversor -->
+              <path d="M 430 220 L 430 250" stroke="#dc2626" stroke-width="4" fill="none"/>
+              <path d="M 440 220 L 440 275" stroke="#18181b" stroke-width="4" fill="none"/>
+              <text x="350" y="240" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">Cable 2/0</text>
+
+              <!-- Tierra Chasis -->
+              <path d="M 550 460 L 550 495" stroke="#15803d" stroke-width="3" fill="none"/>
+              <text x="560" y="485" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#15803d">4 AWG A CHASIS MAZDA T</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2. Gráfica de Balance de Potencia 220V Simultánea -->
+        <div class="technical-grid" style="margin-top: 28px;">
+          <div class="tech-card">
+            <div class="diagram-card-header">
+              <h4>⚡ Análisis de Carga Simultánea a 220V</h4>
+              <span class="badge-success">Margen Holgado</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Comportamiento cuando la <strong>Estufa de Inducción 220V (3.600W)</strong> y el <strong>Aire Acondicionado Inverter 12k BTU (1.100W)</strong> operan al mismo tiempo sobre la salida HOT1-HOT2:
+            </p>
+
+            <div class="power-gauge-box">
+              <div class="gauge-labels">
+                <span>Consumo Máx. Combinado: <strong>4.700W</strong></span>
+                <span>Capacidad MUST: <strong>6.000W Cont.</strong></span>
+              </div>
+              <div class="gauge-bar">
+                <div class="gauge-fill-stove" style="width: 60%;" title="Estufa Inducción: 3.600W (60%)"></div>
+                <div class="gauge-fill-ac" style="width: 18.3%;" title="Aire Acondicionado: 1.100W (18.3%)"></div>
+              </div>
+              <div class="gauge-legend">
+                <span class="leg-item"><span class="leg-dot stove"></span> Estufa 220V (3.600W máx)</span>
+                <span class="leg-item"><span class="leg-dot ac"></span> Aire Acondicionado (1.100W máx)</span>
+                <span class="leg-item"><span class="leg-dot free"></span> 1.300W Libres de Reserva</span>
+              </div>
+            </div>
+
+            <ul class="specs-list" style="margin-top: 18px;">
+              <li><strong>En uso real promedio:</strong> La estufa cocinando a fuego medio consume ~1.600W y el aire estabilizado consume ~500W. Consumo real = <strong>2.100W (apenas el 35% del inversor)</strong>.</li>
+              <li><strong>Protección individual:</strong> La estufa lleva su propio taco bipolar de 2x20A y el aire su propio taco de 2x15A. Cero interferencias.</li>
+            </ul>
+          </div>
+
+          <!-- 3. Curva de Generación Solar Diaria vs Consumo Base -->
+          <div class="tech-card">
+            <div class="diagram-card-header">
+              <h4>☀️ Curva Solar Diaria (1.890 Wp) vs. Consumo</h4>
+              <span class="pill">Colombia 4.5 HSP</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              Cosecha en el techo (2x Osda 720W + 1x 450W Boost) frente al consumo base de 24 horas:
+            </p>
+
+            <div class="solar-curve-wrapper">
+              <svg viewBox="0 0 450 180" class="curve-svg">
+                <!-- Ejes -->
+                <line x1="40" y1="150" x2="430" y2="150" stroke="#cbd5e1" stroke-width="1.5"/>
+                <line x1="40" y1="20" x2="40" y2="150" stroke="#cbd5e1" stroke-width="1.5"/>
+
+                <!-- Horas -->
+                <text x="40" y="165" font-size="9" fill="#94a3b8" text-anchor="middle">6am</text>
+                <text x="135" y="165" font-size="9" fill="#94a3b8" text-anchor="middle">9am</text>
+                <text x="235" y="165" font-size="9" fill="#94a3b8" text-anchor="middle">12pm</text>
+                <text x="335" y="165" font-size="9" fill="#94a3b8" text-anchor="middle">3pm</text>
+                <text x="420" y="165" font-size="9" fill="#94a3b8" text-anchor="middle">6pm</text>
+
+                <!-- Watts -->
+                <text x="35" y="150" font-size="9" fill="#94a3b8" text-anchor="end">0W</text>
+                <text x="35" y="85" font-size="9" fill="#94a3b8" text-anchor="end">1.000W</text>
+                <text x="35" y="30" font-size="9" fill="#94a3b8" text-anchor="end">1.890W</text>
+
+                <!-- Área y Curva de Sol -->
+                <path d="M 40 150 Q 135 150 180 80 Q 235 25 290 80 Q 335 150 420 150 Z" fill="rgba(245, 158, 11, 0.12)" stroke="#d97706" stroke-width="2"/>
+
+                <!-- Línea de Consumo Base Continuo (Nevera + Starlink + Luces ~160W) -->
+                <line x1="40" y1="138" x2="430" y2="138" stroke="#09090b" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <text x="260" y="133" font-size="8" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#09090b">CONSUMO BASE (160W)</text>
+
+                <!-- Pico de Almuerzo / Taller -->
+                <rect x="220" y="55" width="40" height="83" fill="rgba(2, 132, 199, 0.2)" stroke="#0284c7" stroke-dasharray="2 2"/>
+                <text x="240" y="50" font-size="8" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#0284c7" text-anchor="middle">Cocina/Taller</text>
+              </svg>
+            </div>
+
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">
+              * De 10:00 AM a 3:00 PM, el arreglo solar produce entre <strong>1.400W y 1.750W reales</strong>, cubriendo el uso de cocina y herramientas pesadas con excedente para cargar el litio.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Diagrama de Transformador Split-Phase y Balance de Cargas -->
+        <div class="diagram-card" style="margin-top: 28px;">
+          <div class="diagram-card-header">
+            <h4>⚡ Esquema del Transformador Toroidal Split-Phase y Balance de Fases</h4>
+            <span class="tag tag-ac">MUST PV33-6048 TLV • 6.000W Continuos</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+            Arquitectura interna de baja frecuencia: El transformador de cobre toroidal genera dos semi-ondas de 110V desfasadas 180° con toma central (Neutro N). Permite extraer 110V de cada pierna (hasta 3.000W c/u) y 220V entre piernas (hasta 6.000W).
+          </p>
+          <div class="svg-diagram-wrapper">
+            <svg class="tech-svg" viewBox="0 0 950 360" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fondo Transformador -->
+              <rect x="20" y="20" width="320" height="320" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="35" y="48" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#09090b">TRANSFORMADOR TOROIDAL MUST</text>
+              <text x="35" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Baja Frecuencia • Aislamiento Galvánico</text>
+
+              <!-- Bobina Primaria 48V DC -->
+              <rect x="40" y="100" width="60" height="180" rx="6" fill="#09090b"/>
+              <text x="70" y="195" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle" transform="rotate(-90 70 195)">PRIMARIO 48V DC</text>
+
+              <!-- Núcleo Toroidal Magnético -->
+              <rect x="130" y="85" width="25" height="210" rx="4" fill="#94a3b8"/>
+              <rect x="170" y="85" width="25" height="210" rx="4" fill="#94a3b8"/>
+              <text x="162" y="315" font-family="'JetBrains Mono', monospace" font-size="9" fill="#64748b" text-anchor="middle">NÚCLEO TOROIDAL</text>
+
+              <!-- Bobina Secundaria Center-Tap -->
+              <!-- Pierna 1 -->
+              <rect x="225" y="90" width="75" height="85" rx="5" fill="#1e293b"/>
+              <text x="262" y="138" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">BOBINA 1</text>
+              <text x="262" y="152" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94a3b8" text-anchor="middle">110V AC (3kW)</text>
+
+              <!-- Toma Central Neutro -->
+              <circle cx="262" cy="180" r="6" fill="#15803d"/>
+              <text x="275" y="184" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#15803d">CENTER-TAP (N)</text>
+
+              <!-- Pierna 2 -->
+              <rect x="225" y="195" width="75" height="85" rx="5" fill="#1e293b"/>
+              <text x="262" y="243" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">BOBINA 2</text>
+              <text x="262" y="257" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94a3b8" text-anchor="middle">110V AC (3kW)</text>
+
+              <!-- Líneas de Salida -->
+              <!-- HOT1 -->
+              <path d="M 300 110 L 440 110" stroke="#b91c1c" stroke-width="3" fill="none"/>
+              <text x="360" y="102" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#b91c1c">HOT1 (110V)</text>
+
+              <!-- NEUTRO -->
+              <path d="M 300 180 L 440 180" stroke="#15803d" stroke-width="3" stroke-dasharray="4 2" fill="none"/>
+              <text x="360" y="172" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#15803d">NEUTRO (0V)</text>
+
+              <!-- HOT2 -->
+              <path d="M 300 250 L 440 250" stroke="#0284c7" stroke-width="3" fill="none"/>
+              <text x="360" y="242" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0284c7">HOT2 (110V)</text>
+
+              <!-- Conexión Cargas 220V (Entre HOT1 y HOT2) -->
+              <path d="M 440 110 L 520 110 L 520 80 L 620 80" stroke="#b91c1c" stroke-width="2.5" fill="none"/>
+              <path d="M 440 250 L 520 250 L 520 110 L 620 110" stroke="#0284c7" stroke-width="2.5" fill="none"/>
+
+              <rect x="620" y="65" width="310" height="65" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+              <text x="635" y="88" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#b91c1c">CARGAS 220V (HOT1 - HOT2): 4.700W MÁX</text>
+              <text x="635" y="106" font-family="'JetBrains Mono', monospace" font-size="10" fill="#475569">• Estufa 220V (3.600W) + Aire Inverter (1.100W)</text>
+              <text x="635" y="120" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#15803d">⚡ EQUILIBRIO PERFECTO: 2.350W por pierna (Límite: 3.000W)</text>
+
+              <!-- Conexión Carga HOT1 (Taller) -->
+              <path d="M 440 125 L 560 125 L 560 170 L 620 170" stroke="#b91c1c" stroke-width="2" fill="none"/>
+              <path d="M 440 180 L 580 180 L 580 195 L 620 195" stroke="#15803d" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+
+              <rect x="620" y="155" width="310" height="65" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="635" y="178" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#09090b">FASE 1: 110V TALLER (HOT1 - N)</text>
+              <text x="635" y="196" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">• Soldadora MIG 140A (1.600W) | Sierra 7-1/4" (1.400W)</text>
+              <text x="635" y="210" font-family="'JetBrains Mono', monospace" font-size="9" fill="#0284c7">Aislada de computadores • Taco 20A GFCI</text>
+
+              <!-- Conexión Carga HOT2 (Cómputo) -->
+              <path d="M 440 235 L 560 235 L 560 260 L 620 260" stroke="#0284c7" stroke-width="2" fill="none"/>
+              <path d="M 440 185 L 580 185 L 580 285 L 620 285" stroke="#15803d" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+
+              <rect x="620" y="245" width="310" height="65" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text x="635" y="268" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#09090b">FASE 2: 110V CÓMPUTO & HOGAR (HOT2 - N)</text>
+              <text x="635" y="286" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">• PC Gamer RTX 5080 (650W) | 3 Monitores | Nevera (200W)</text>
+              <text x="635" y="300" font-family="'JetBrains Mono', monospace" font-size="9" fill="#15803d">Onda senoidal pura impecable • Cero caídas</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 5. Gráficas Técnicas: Anti-Vibración & MPPT Boost Techo -->
+        <div class="technical-grid" style="margin-top: 28px;">
+          <!-- Diagrama Anti-Vibración Chasis -->
+          <div class="tech-card">
+            <div class="diagram-card-header">
+              <h4>🔩 Blindaje Anti-Vibración Chasis Mazda T</h4>
+              <span class="tag tag-dc">Muelles Rígidos Diésel</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+              Corte técnico del sistema de aislamiento mecánico para proteger la Batería LP1600 (80kg) y el Inversor MUST (45kg) del impacto de las ballestas del camión:
+            </p>
+            <div class="svg-diagram-wrapper">
+              <svg viewBox="0 0 420 240" class="tech-svg-compact">
+                <!-- Larguero de Chasis -->
+                <rect x="30" y="180" width="360" height="35" rx="3" fill="#1e293b"/>
+                <text x="210" y="202" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">LARGUERO DE ACERO CHASIS MAZDA T4.5</text>
+
+                <!-- Silentblock de Caucho -->
+                <rect x="150" y="135" width="120" height="40" rx="8" fill="#475569" stroke="#09090b" stroke-width="2"/>
+                <text x="210" y="160" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#f8fafc" text-anchor="middle">SILENTBLOCK M10 (Caucho 65 ShA)</text>
+
+                <!-- Espárrago Pasante & Tuerca Nyloc -->
+                <line x1="210" y1="50" x2="210" y2="230" stroke="#09090b" stroke-width="4"/>
+                <rect x="195" y="218" width="30" height="14" rx="2" fill="#0284c7"/>
+                <text x="235" y="230" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#0284c7">Tuerca NYLOC M10</text>
+
+                <!-- Base Estructural de Inversor/Batería -->
+                <rect x="70" y="85" width="280" height="45" rx="4" fill="#09090b"/>
+                <text x="210" y="108" font-family="'Outfit', sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">BANDEJA ACERO 3mm (MUST 45kg / BATERÍA 80kg)</text>
+                <text x="210" y="122" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">Absorbe 92% de armónicos de vibración en trocha</text>
+
+                <!-- Flechas de amortiguación -->
+                <path d="M 120 155 Q 130 145 140 155" stroke="#ef4444" stroke-width="2" fill="none"/>
+                <path d="M 280 155 Q 290 145 300 155" stroke="#ef4444" stroke-width="2" fill="none"/>
+                <text x="210" y="35" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#15803d" text-anchor="middle">🔒 FIJACIÓN CON LOCKTITE AZUL 242 + ARANDELA GROWER</text>
+              </svg>
+            </div>
+            <ul class="specs-list" style="margin-top: 14px;">
+              <li><strong>Zero aflojamientos:</strong> Las tuercas estándar se sueltan con el diésel; las tuercas con anillo de nylon (Nyloc) jamás retroceden.</li>
+              <li><strong>Cables 2/0 AWG:</strong> Abrazaderas tipo P engomadas cada 20cm con lazo de flexión (strain relief loop) de 8cm.</li>
+            </ul>
+          </div>
+
+          <!-- Diagrama MPPT Boost 500W Techo -->
+          <div class="tech-card">
+            <div class="diagram-card-header">
+              <h4>☀️ Topología MPPT Boost 500W (Panel 450W)</h4>
+              <span class="tag tag-dc">ASIN B0GPQX7TS1</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+              Cómo el controlador elevador soluciona la incompatibilidad de voltaje entre 1 solo panel de 41V y la batería de 58.4V:
+            </p>
+            <div class="svg-diagram-wrapper">
+              <svg viewBox="0 0 420 240" class="tech-svg-compact">
+                <!-- Panel 450W -->
+                <rect x="20" y="30" width="105" height="140" rx="5" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="72" y="60" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">PANEL 450W</text>
+                <text x="72" y="80" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">Vmp: 34.5V</text>
+                <text x="72" y="98" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">Voc: 41.2V</text>
+                <text x="72" y="116" font-family="'JetBrains Mono', monospace" font-size="8" fill="#fde68a" text-anchor="middle">Imp: 13.0A</text>
+                <text x="72" y="145" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">Espacio Techo</text>
+
+                <!-- Línea Panel a Boost -->
+                <path d="M 125 100 L 165 100" stroke="#09090b" stroke-width="2.5" fill="none"/>
+                <text x="145" y="92" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">35-41V</text>
+
+                <!-- Controlador MPPT Boost 500W -->
+                <rect x="165" y="45" width="120" height="110" rx="6" fill="#f8fafc" stroke="#09090b" stroke-width="2"/>
+                <text x="225" y="72" font-family="'Outfit', sans-serif" font-size="10" font-weight="800" fill="#09090b" text-anchor="middle">MPPT BOOST 500W</text>
+                <text x="225" y="90" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#0284c7" text-anchor="middle">ELEVADOR DC-DC</text>
+                <text x="225" y="112" font-family="'JetBrains Mono', monospace" font-size="8" fill="#64748b" text-anchor="middle">Entrada: 18V-50V</text>
+                <text x="225" y="130" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">Salida: 58.4V Litio</text>
+
+                <!-- Fusible 15A -->
+                <path d="M 285 100 L 320 100" stroke="#15803d" stroke-width="2.5" fill="none"/>
+                <rect x="300" y="90" width="20" height="20" rx="3" fill="#ffffff" stroke="#15803d" stroke-width="1.5"/>
+                <text x="310" y="103" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" text-anchor="middle">15A</text>
+
+                <!-- Busbar 48V -->
+                <rect x="340" y="30" width="60" height="140" rx="5" fill="#dc2626"/>
+                <text x="370" y="105" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle" transform="rotate(-90 370 105)">BUSBAR (+) 48V</text>
+
+                <!-- Nota inferior -->
+                <text x="210" y="195" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#09090b" text-anchor="middle">⚡ Rinde ~1.700 Wh/día extra directo al litio</text>
+                <text x="210" y="215" font-family="'JetBrains Mono', monospace" font-size="8" fill="#64748b" text-anchor="middle">Opera en simultáneo y sin conflicto con el MPPT 80A del MUST</text>
+              </svg>
+            </div>
+            <ul class="specs-list" style="margin-top: 14px;">
+              <li><strong>Independencia total:</strong> Si los paneles Osda se sombrean parcialmente, esta línea sigue inyectando 500W limpios.</li>
+              <li><strong>Protección:</strong> Fusible tipo cuchilla de 15A a la salida positiva del controlador hacia la barra colectora.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6. Diagrama Cable de Rescate NEMA 14-30P -->
+        <div class="diagram-card" style="margin-top: 28px;">
+          <div class="diagram-card-header">
+            <h4>🔌 Pinout & Diagrama de Cable de Rescate 220V (NEMA 14-30P a Inversor)</h4>
+            <span class="tag tag-ac">Cable STW 4x10 AWG (15m) • Carga 40A @ 48V</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+            Esquema del cable móvil de 15 metros para conectar la camper a tomas bifásicas industriales (208V-240V) en talleres mecánicos, montallantas y estaciones de carretera en Colombia:
+          </p>
+          <div class="svg-diagram-wrapper">
+            <svg class="tech-svg" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+              <!-- Clavija NEMA 14-30P macho -->
+              <rect x="30" y="30" width="220" height="180" rx="10" fill="#f8fafc" stroke="#09090b" stroke-width="2"/>
+              <text x="140" y="60" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#09090b" text-anchor="middle">CLAVIJA NEMA 14-30P (MACHO)</text>
+              <text x="140" y="76" font-family="'JetBrains Mono', monospace" font-size="9" fill="#64748b" text-anchor="middle">Grado Industrial 30A 125/250V</text>
+
+              <!-- Pines Clavija -->
+              <rect x="60" y="100" width="30" height="12" rx="2" fill="#09090b"/>
+              <text x="50" y="110" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#09090b" text-anchor="end">X (Fase 1)</text>
+
+              <rect x="190" y="100" width="30" height="12" rx="2" fill="#dc2626"/>
+              <text x="230" y="110" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#dc2626">Y (Fase 2)</text>
+
+              <rect x="125" y="140" width="30" height="12" rx="2" fill="#94a3b8"/>
+              <text x="140" y="165" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#64748b" text-anchor="middle">W (Neutro)</text>
+
+              <circle cx="140" cy="185" r="7" fill="#15803d"/>
+              <text x="140" y="205" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#15803d" text-anchor="middle">G (Tierra)</text>
+
+              <!-- Manguera de Cable 4x10 AWG -->
+              <rect x="250" y="105" width="280" height="40" rx="4" fill="#09090b"/>
+              <text x="390" y="128" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">CABLE DE USO EXTRA-PESADO STW 4x10 AWG (15 Metros)</text>
+              <text x="390" y="140" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">Resistente a aceite, diésel, intemperie y aplastamiento</text>
+
+              <!-- Conexión a Bornera MUST -->
+              <path d="M 530 112 L 660 65" stroke="#09090b" stroke-width="3" fill="none"/>
+              <path d="M 530 118 L 660 105" stroke="#dc2626" stroke-width="3" fill="none"/>
+              <path d="M 530 128 L 660 145" stroke="#64748b" stroke-width="2.5" stroke-dasharray="3 3" fill="none"/>
+              <path d="M 530 138 L 660 185" stroke="#15803d" stroke-width="2.5" fill="none"/>
+
+              <!-- Gabinete Bornera AC Input MUST -->
+              <rect x="660" y="30" width="210" height="180" rx="8" fill="#09090b"/>
+              <text x="765" y="55" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">MUST PV3300 TLV (AC INPUT)</text>
+              
+              <rect x="680" y="68" width="170" height="25" rx="3" fill="#18181b" stroke="#3f3f46"/>
+              <text x="690" y="85" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ffffff">HOT1: Fase A (Negro)</text>
+
+              <rect x="680" y="100" width="170" height="25" rx="3" fill="#18181b" stroke="#3f3f46"/>
+              <text x="690" y="117" font-family="'JetBrains Mono', monospace" font-size="9" fill="#f87171">HOT2: Fase B (Rojo)</text>
+
+              <rect x="680" y="132" width="170" height="25" rx="3" fill="#18181b" stroke="#3f3f46"/>
+              <text x="690" y="149" font-family="'JetBrains Mono', monospace" font-size="9" fill="#cbd5e1">NEUTRO: Neutro (Blanco)</text>
+
+              <rect x="680" y="164" width="170" height="25" rx="3" fill="#18181b" stroke="#3f3f46"/>
+              <text x="690" y="181" font-family="'JetBrains Mono', monospace" font-size="9" fill="#4ade80">GND: Chasis Mazda T (Verde)</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: CAPÍTULO 3 - ESQUEMA SPLIT-PHASE -->
+      <section id="tab-overview" class="tab-pane">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="card-icon">☀️</div>
+            <div class="card-info">
+              <span class="label">Generación Solar Techo</span>
+              <span class="number">1.920 Wp</span>
+              <span class="detail">2x Osda 730W (1.460W) + 1x 460W Restar Boost • ~6.900 Wh/d</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="card-icon">🚐</div>
+            <div class="card-info">
+              <span class="label">Carga en Carretera</span>
+              <span class="number">380 W</span>
+              <span class="detail">Alternador Mazda T4.5 original vía Victron Orion (8A @ 48V)</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="card-icon">⚡</div>
+            <div class="card-info">
+              <span class="label">Inversor MUST PV3300</span>
+              <span class="number">6.000 W</span>
+              <span class="detail">Baja Frecuencia • Pico 18.000 VA</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="card-icon">🛰️</div>
+            <div class="card-info">
+              <span class="label">Starlink Gen 3 Nativo</span>
+              <span class="number">48V DC</span>
+              <span class="detail">Inyector YAOSHENG directo (Inversor OFF)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="architecture-grid">
+          <div class="road-card road-ac">
+            <div class="road-header">
+              <span class="tag tag-ac">Fase 1 (HOT1 - N / 110V)</span>
+              <h3>Línea de Taller & Cocina</h3>
+            </div>
+            <p class="road-desc">Circuito protegido con taco 20A con falla a tierra GFCI para aislar el ruido eléctrico y los arcos de soldadura:</p>
+            <ul class="circuit-list">
+              <li><strong>Soldadora MIG 140A (1.600W):</strong> Carga inductiva pura.</li>
+              <li><strong>Sierra Circular 7-1/4" (1.400W):</strong> Arranque absorbido por los 18 kVA de baja frecuencia.</li>
+              <li><strong>Horno Freidora KitchenAid (1.800W):</strong> Resistencia térmica.</li>
+              <li><strong>Amoladora Angular & Enrutador:</strong> Motores universales de alta velocidad.</li>
+            </ul>
+          </div>
+
+          <div class="road-card road-ac">
+            <div class="road-header">
+              <span class="tag tag-ac">Fase 2 (HOT2 - N / 110V)</span>
+              <h3>Línea de Cómputo & Confort</h3>
+            </div>
+            <p class="road-desc">Línea limpia e independiente para evitar caídas de tensión sobre la electrónica fina:</p>
+            <ul class="circuit-list">
+              <li><strong>PC Gamer (RTX 5080 + Fuente MSI 850W):</strong> Protección de onda senoidal pura.</li>
+              <li><strong>3 Monitores Juntos (100W):</strong> Pantallas de producción y streaming.</li>
+              <li><strong>Nevera Mabe 400L Inverter (200W):</strong> Línea blanca con respaldo continuo.</li>
+              <li><strong>Impresoras 3D (Flsun V400 & Saturn 2):</strong> Cargas electrónicas continuas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="road-card" style="border-left: 4px solid var(--accent-red); margin-bottom: 28px;">
+          <div class="road-header">
+            <span class="tag" style="background:#fef2f2; color:#b91c1c; border:1px solid #fee2e2;">Salida Bifásica (HOT1 - HOT2 / 220V)</span>
+            <h3>Salida Directa de Alta Tensión (220VAC Simultáneos)</h3>
+          </div>
+          <p class="road-desc">Alimentada entre los dos extremos vivos del transformador del MUST PV33-6048 TLV:</p>
+          <ul class="circuit-list">
+            <li><strong>Estufa de Inducción Doble 220V (3.600W):</strong> Taco doble 2x20A. Cada quemador opera a potencia plena sin compartir energía.</li>
+            <li><strong>Aire Acondicionado Samsung Inverter (12k BTU - 1.100W máx / 500W est.):</strong> Taco doble 2x15A independiente.</li>
+            <li><strong>Plancha Térmica Multifunción 5 en 1 (1.300W):</strong> Lista para conectar a toma 220V.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TAB 4: CAPÍTULO 4 - SIMULADOR DE AUTONOMÍA -->
+      <section id="tab-simulator" class="tab-pane">
+        <div class="sim-container">
+          <!-- Sidebar Fijo de Generación -->
+          <div class="sim-sidebar">
+            <h3>🎛️ Generación Solar & Ruta</h3>
+            
+            <div class="control-group">
+              <label>Arreglo de Paneles Solares</label>
+              <select id="sim-solar-preset" class="form-select">
+                <option value="1920" selected>Híbrido: 2x Osda 730W + 1x 460W Restar Boost (1.920Wp)</option>
+                <option value="1460">Solo 2 Paneles Osda 730W (1.460Wp)</option>
+                <option value="730">Solo 1 Panel Osda 730W (730Wp)</option>
+                <option value="0">Día Lluvioso / Nublado (0W)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label>Horas Sol Pico (HSP Colombia): <strong id="sim-hsp-val">4.5 h</strong></label>
+              <input type="range" id="sim-hsp-range" min="0" max="7" step="0.5" value="4.5">
+            </div>
+
+            <div class="control-group">
+              <label>Cargador de Alternador (Victron Orion)</label>
+              <select id="sim-victron-preset" class="form-select">
+                <option value="380" selected>1 Victron Orion 12/48-8A (380W - Alternador Original)</option>
+                <option value="760">2 Victron Orion en Paralelo (760W)</option>
+                <option value="0">Estacionado / Motor Apagado (0W)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label>Horas de Manejo en Carretera: <strong id="sim-drive-val">2.0 h</strong></label>
+              <input type="range" id="sim-drive-range" min="0" max="8" step="0.5" value="2.0">
+            </div>
+
+            <div class="summary-box">
+              <div class="summary-line">
+                <span>Cosecha Solar Techo:</span>
+                <strong id="res-solar-harvest">6.912 Wh</strong>
+              </div>
+              <div class="summary-line">
+                <span>Cosecha Alternador:</span>
+                <strong id="res-drive-harvest">760 Wh</strong>
+              </div>
+              <div class="summary-line total">
+                <span>Total Generado Hoy:</span>
+                <strong id="res-total-harvest" class="highlight">7.672 Wh</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Principal: Cockpit HUD Fijo y Cargas en Minutos -->
+          <div class="sim-results">
+            <!-- STICKY HUD CABINA: SIEMPRE VISIBLE AL NAVEGAR O HACER SCROLL -->
+            <div class="sim-sticky-hud">
+              <div class="hud-top-bar">
+                <div class="hud-title-zone">
+                  <span class="hud-live-tag"><span class="pulse-dot"></span> EN VIVO</span>
+                  <span class="hud-devices-count" id="hud-active-count">0 equipos activos (0 Wh)</span>
+                </div>
+                <div class="hud-presets-bar">
+                  <button class="btn-preset btn-preset-danger" id="btn-sim-reset" title="Poner todas las cargas a cero inmediatamente">
+                    🔄 Todo a Cero (0 min)
+                  </button>
+                  <button class="btn-preset" id="btn-sim-base" title="Nevera 24h, Starlink 12h, Cámara/DC 24h">
+                    🏕️ Base 24/7
+                  </button>
+                  <button class="btn-preset" id="btn-sim-workshop" title="Soldadora 20m, Sierra 15m, Amoladora 15m, PC 2h">
+                    ⚡ Día de Taller
+                  </button>
+                  <button class="btn-preset" id="btn-sim-kitchen" title="Estufa Inducción 220V 30m, Horno 25m, Licuadora 2m">
+                    🍳 Almuerzo Gourmet
+                  </button>
+                </div>
+              </div>
+
+              <!-- 4 Métricas Clave Siempre Visibles -->
+              <div class="hud-metrics-grid">
+                <div class="hud-metric-item">
+                  <span class="hud-m-label">☀️ Cosechado / Generado</span>
+                  <div class="hud-m-val-wrap">
+                    <span class="hud-m-val text-green" id="dash-gen-val">+7.672 Wh</span>
+                  </div>
+                  <span class="hud-m-sub" id="hud-gen-detail">Solar: ~6.912Wh • Alt: ~760Wh</span>
+                </div>
+
+                <div class="hud-metric-item">
+                  <span class="hud-m-label">⚡ Consumo Seleccionado</span>
+                  <div class="hud-m-val-wrap">
+                    <span class="hud-m-val text-red" id="dash-con-val">0 Wh</span>
+                  </div>
+                  <span class="hud-m-sub" id="hud-con-detail">Inversor MUST: En reposo (0W)</span>
+                </div>
+
+                <div class="hud-metric-item">
+                  <span class="hud-m-label">⚖️ Balance Diario</span>
+                  <div class="hud-m-val-wrap">
+                    <span class="hud-m-val text-green" id="dash-net-val">+7.672 Wh</span>
+                  </div>
+                  <span class="hud-m-sub" id="hud-net-detail">Superávit total del sistema</span>
+                </div>
+
+                <div class="hud-metric-item">
+                  <span class="hud-m-label">🔋 Batería MUST LP1600 (10.2kWh)</span>
+                  <div class="hud-m-val-wrap">
+                    <span class="hud-m-val text-green" id="dash-bat-state">100% Carga</span>
+                  </div>
+                  <div class="hud-progress-wrap">
+                    <div class="hud-progress-bar" id="hud-bat-bar" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barra de Filtros y Búsqueda de Equipos -->
+            <div class="sim-filter-bar">
+              <div class="sim-search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="sim-search-input" placeholder="Buscar equipo (ej: Soldadora, Estufa, Horno, Nevera, RTX 5080)...">
+              </div>
+              <div class="sim-filter-chips">
+                <button class="sim-cat-btn active" data-sim-cat="all">Todos (31)</button>
+                <button class="sim-cat-btn" data-sim-cat="active">⚡ Activos (<span id="sim-cat-active-num">0</span>)</button>
+                <button class="sim-cat-btn" data-sim-cat="Taller">Taller</button>
+                <button class="sim-cat-btn" data-sim-cat="Cómputo">Cómputo</button>
+                <button class="sim-cat-btn" data-sim-cat="Confort">Confort & Cocina</button>
+                <button class="sim-cat-btn" data-sim-cat="DC">DC 48V/12V</button>
+              </div>
+            </div>
+
+            <!-- Grid de Tarjetas de Equipos con Minutos -->
+            <div class="sim-devices-grid" id="sim-devices-container">
+              <!-- Renderizado interactivo dinámico desde app.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: CAPÍTULO 5 - TABLA DE CARGAS MAESTRA -->
+      <section id="tab-loads" class="tab-pane">
+        <div class="table-header-controls">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="load-search" placeholder="Buscar equipo (ej: Soldadora, RTX 5080, Horno)...">
+          </div>
+          <div class="filter-group">
+            <button class="filter-btn active" data-cat="all">Todos (31)</button>
+            <button class="filter-btn" data-cat="Taller">Taller / Carpintería</button>
+            <button class="filter-btn" data-cat="Cómputo">Cómputo & 3D</button>
+            <button class="filter-btn" data-cat="Confort">Cocina & Confort</button>
+            <button class="filter-btn" data-cat="DC">DC Nativo (48V/12V)</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="loads-table">
+            <thead>
+              <tr>
+                <th>Equipo / Carga</th>
+                <th>Categoría</th>
+                <th>Watts (AC/DC)</th>
+                <th>Amperios @ 48V</th>
+                <th>Línea Asignada (MUST)</th>
+                <th>Comportamiento Técnico</th>
+              </tr>
+            </thead>
+            <tbody id="loads-table-body">
+              <!-- Insertado por JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 6: CAPÍTULO 6 - BLINDAJE & PROTECCIONES -->
+      <section id="tab-technical" class="tab-pane">
+        <div class="technical-grid">
+          <div class="tech-card">
+            <h3>🔩 Blindaje Antivibración (Mazda T 2000)</h3>
+            <p>La suspensión de ballestas del camión exige blindaje mecánico de grado automotriz y marino:</p>
+            <ul class="specs-list">
+              <li><strong>8 Silentblocks M10 ABuff:</strong> Aisladores de caucho industrial entre la estructura metálica del furgón y el tablero de contrachapado fenólico Kingply de 18mm.</li>
+              <li><strong>Tuercas de Seguridad Nyloc:</strong> Con anillo de nylon deformable en todos los bornes M8/M10 (batería, busbars, seccionadores y silentblocks). Prohibidas las tuercas estándar que se desenroscan solas.</li>
+              <li><strong>Marcas Testigo de Pintura:</strong> Línea trazada con marcador indeleble cruzando tuerca y perno para inspección visual instantánea en 2 segundos.</li>
+              <li><strong>Cable 2/0 AWG THHN (Intereléctricas):</strong> Sujetado rígidamente con abrazaderas plásticas de alta resistencia cada 20 cm a la pared Kingply para neutralizar la fatiga mecánica del cobre.</li>
+            </ul>
+          </div>
+
+          <div class="tech-card">
+            <h3>🛡️ Protecciones Principales DC</h3>
+            <ul class="specs-list">
+              <li><strong>Fusible Clase T de 250A:</strong> A menos de 30 cm del borne (+) de la batería. Capacidad de ruptura de cortocircuito >20kA para la química LiFePO4.</li>
+              <li><strong>Seccionador Marino de 300A:</strong> Desconectador manual de alto amperaje para el Inversor MUST PV33-6048 TLV. Evita disparos térmicos en falso.</li>
+              <li><strong>2 Barras Colectoras (Busbars) de Cobre 250A:</strong> Centralización de negativos y positivos con pernos M8/M10.</li>
+              <li><strong>Breaker Fotovoltaico 2P 16A / 500V:</strong> Corte bipolar entre los paneles Osda y la entrada PV del inversor.</li>
+            </ul>
+          </div>
+
+          <div class="tech-card full-width">
+            <h3>⚡ Tablero Residencial AC (Homecenter / Eléctricos)</h3>
+            <div class="ac-breakers-table">
+              <div class="breaker-row">
+                <span class="b-code">C1 (220V)</span>
+                <span class="b-type">Taco Doble 2 x 20A</span>
+                <span class="b-target">HOT1 - HOT2: Estufa de Inducción Doble 220V (3.600W)</span>
+                <span class="b-wire">Cable 12 AWG (2 Fases + Tierra)</span>
+              </div>
+              <div class="breaker-row">
+                <span class="b-code">C2 (220V)</span>
+                <span class="b-type">Taco Doble 2 x 15A</span>
+                <span class="b-target">HOT1 - HOT2: Aire Acondicionado Samsung Inverter (12k BTU - 1.100W)</span>
+                <span class="b-wire">Cable 14 AWG (Circuito Independiente)</span>
+              </div>
+              <div class="breaker-row">
+                <span class="b-code">C3 (110V)</span>
+                <span class="b-type">Taco 20A con GFCI</span>
+                <span class="b-target">HOT1 - N: Soldadora MIG 140A, Sierra Circular, Amoladora, Horno</span>
+                <span class="b-wire">Cable 12 AWG (Protección anti-descargas)</span>
+              </div>
+              <div class="breaker-row">
+                <span class="b-code">C4 (110V)</span>
+                <span class="b-type">Taco 15A Monopolar</span>
+                <span class="b-target">HOT2 - N: PC Gamer (RTX 5080 + MSI 850W), 3 Monitores, Impresoras 3D</span>
+                <span class="b-wire">Cable 14 AWG (Línea limpia y aislada)</span>
+              </div>
+              <div class="breaker-row">
+                <span class="b-code">C5 (110V)</span>
+                <span class="b-type">Taco 15A Monopolar</span>
+                <span class="b-target">HOT2 - N: Nevera Mabe 400L, Lavadora LG 14kg</span>
+                <span class="b-wire">Cable 14 AWG</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: CAPÍTULO 7 - CARGA RÁPIDA 220V DE RESCATE -->
+      <section id="tab-rescue" class="tab-pane">
+        <div class="section-top-bar">
+          <div>
+            <h3>Protocolo de Carga Rápida en Carretera (220V NEMA 14-30P)</h3>
+            <p class="section-sub">Aprovecha la entrada nativa de 220V (HOT1-HOT2) del MUST PV33-6048 TLV para cargar el banco de 10.240 Wh en menos de 3 horas sin costo.</p>
+          </div>
+        </div>
+
+        <div class="banner-rescue" style="margin-bottom: 28px;">
+          <div class="banner-content">
+            <span class="badge-alert">Infraestructura Vial en Colombia</span>
+            <h3>Conexión Directa en Talleres y Montallantas</h3>
+            <p>Todos los talleres mecánicos, montallantas y servitecas de carretera en Colombia tienen tomas de 220V bifásicas donde conectan soldadoras y compresores industriales.</p>
+          </div>
+          <div class="banner-tags">
+            <span class="pill">Entrada: 200V–240V AC</span>
+            <span class="pill">Carga: 40A DC @ 48V (~2.000W)</span>
+            <span class="pill">Tiempo: ~2.8 Horas</span>
+          </div>
+        </div>
+
+        <div class="technical-grid">
+          <div class="tech-card">
+            <h3>🧰 El Cable de Rescate</h3>
+            <ul class="specs-list">
+              <li><strong>Conductor:</strong> 15 metros de cable encauchetado industrial **4x10 AWG** (Fase 1, Fase 2, Neutro y Tierra).</li>
+              <li><strong>Clavija:</strong> Industrial de 4 patas **NEMA 14-30P** (30A 125/250V) comprada en Amazon con saldo a favor.</li>
+              <li><strong>Conexión al Inversor:</strong> Ingresa a las borneras traseras **AC Input: HOT1 - HOT2 + Tierra**.</li>
+            </ul>
+          </div>
+
+          <div class="tech-card">
+            <h3>📋 Procedimiento de Seguridad Paso a Paso</h3>
+            <ol class="specs-list" style="list-style: decimal; padding-left: 20px;">
+              <li><strong>Verificación con Multímetro:</strong> Medir voltaje entre las dos patas vivas de la toma anfitriona. Debe marcar entre 208V y 240V AC.</li>
+              <li><strong>Inversor en Standby:</strong> Conectar la clavija con las cargas del taller apagadas.</li>
+              <li><strong>Monitoreo de Carga:</strong> El cargador AC del MUST inyectará hasta 40A a la batería de litio mientras alimenta por bypass las cargas internas.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 8: CAPÍTULO 8 - PROVEEDORES & TIENDAS -->
+      <section id="tab-suppliers" class="tab-pane">
+        <div class="section-top-bar">
+          <div>
+            <h3>Directorio de Proveedores y Materiales</h3>
+            <p class="section-sub">Espacio en blanco listo para que agregues tus proveedores, contactos y cotizaciones reales.</p>
+          </div>
+          <button class="btn btn-primary" id="btn-add-supplier">+ Agregar Proveedor</button>
+        </div>
+
+        <div class="suppliers-grid" id="suppliers-container">
+          <!-- Renderizado dinámico desde app.js -->
+        </div>
+      </section>
+
+      <!-- TAB 9: CAPÍTULO 9 - BANCO DE ENLACES & FOTOS -->
+      <section id="tab-links-media" class="tab-pane">
+        <div class="section-top-bar">
+          <div>
+            <h3>Banco de Enlaces, Documentos y Galería</h3>
+            <p class="section-sub">Guarda tus links de compra, manuales PDF e imágenes de referencia para tenerlos a mano en cualquier momento.</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-secondary" id="btn-add-link">+ Agregar Enlace</button>
+            <button class="btn btn-primary" id="btn-add-photo">+ Agregar Foto / Imagen</button>
+          </div>
+        </div>
+
+        <div class="media-tabs-nav">
+          <button class="sub-tab-btn active" data-subtab="sub-links">Enlaces & Documentos (<span id="count-links">0</span>)</button>
+          <button class="sub-tab-btn" data-subtab="sub-gallery">Galería de Imágenes (<span id="count-photos">0</span>)</button>
+        </div>
+
+        <div id="sub-links" class="sub-pane active">
+          <div class="links-grid" id="links-container">
+            <!-- Insertado por JS -->
+          </div>
+        </div>
+
+        <div id="sub-gallery" class="sub-pane">
+          <div class="gallery-grid" id="gallery-container">
+            <!-- Insertado por JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: AGREGAR PROVEEDOR -->
+  <div class="modal-backdrop" id="modal-supplier">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Agregar Nuevo Proveedor</h3>
+        <button class="modal-close" data-close="modal-supplier">&times;</button>
+      </div>
+      <form id="form-supplier" class="modal-form">
+        <div class="form-group">
+          <label>Nombre del Proveedor / Tienda</label>
+          <input type="text" id="sup-name" required placeholder="Ej: Distribuidora Eléctrica del Norte">
+        </div>
+        <div class="form-group">
+          <label>Categoría</label>
+          <input type="text" id="sup-category" required placeholder="Ej: Cableado, Baterías, Tornillería, Maderas">
+        </div>
+        <div class="form-group">
+          <label>Contacto / Teléfono / Ubicación</label>
+          <input type="text" id="sup-contact" placeholder="Ej: Bogotá • Tel / WhatsApp: 310-0000000">
+        </div>
+        <div class="form-group">
+          <label>Productos Clave a Comprar / Cotización</label>
+          <textarea id="sup-items" rows="3" placeholder="Ej: Cable 2/0 AWG, terminales M10, tacos Schneider..."></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-close="modal-supplier">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Proveedor</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: AGREGAR ENLACE -->
+  <div class="modal-backdrop" id="modal-link">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Agregar Enlace o Documento</h3>
+        <button class="modal-close" data-close="modal-link">&times;</button>
+      </div>
+      <form id="form-link" class="modal-form">
+        <div class="form-group">
+          <label>Título del Enlace</label>
+          <input type="text" id="link-title" required placeholder="Ej: Regulador MPPT Boost 500W Amazon B0GPQX7TS1">
+        </div>
+        <div class="form-group">
+          <label>URL (Enlace completo)</label>
+          <input type="url" id="link-url" required placeholder="https://amazon.com/dp/...">
+        </div>
+        <div class="form-group">
+          <label>Categoría</label>
+          <select id="link-category" class="form-select">
+            <option value="Amazon">Amazon / Importación</option>
+            <option value="Datasheet">Ficha Técnica / Manual</option>
+            <option value="Local">Tienda Local Colombia</option>
+            <option value="Video">Video / Guía</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Nota / Descripción</label>
+          <input type="text" id="link-notes" placeholder="Ej: Regulador elevador para el panel de 450W">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-close="modal-link">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Enlace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: AGREGAR FOTO / IMAGEN -->
+  <div class="modal-backdrop" id="modal-photo">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Agregar Imagen al Banco</h3>
+        <button class="modal-close" data-close="modal-photo">&times;</button>
+      </div>
+      <form id="form-photo" class="modal-form">
+        <div class="form-group">
+          <label>Título / Descripción de la Imagen</label>
+          <input type="text" id="photo-title" required placeholder="Ej: Foto del furgón Mazda T con los paneles">
+        </div>
+        <div class="form-group">
+          <label>URL de la Imagen (o ruta web)</label>
+          <input type="url" id="photo-url" required placeholder="https://ejemplo.com/foto.jpg">
+        </div>
+        <div class="form-group">
+          <label>Etiqueta / Componente</label>
+          <input type="text" id="photo-tag" placeholder="Ej: Techo, Batería, Inversor, Cableado">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-close="modal-photo">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Imagen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL LIGHTBOX PARA VER IMAGEN GRANDE -->
+  <div class="lightbox-backdrop" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Vista previa">
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
