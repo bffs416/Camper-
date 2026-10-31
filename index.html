@@ -1021,6 +1021,115 @@
               </div>
             </div>
           </div>
+
+          <!-- SECCIÓN ESPECIAL: CARPC, DASHCAM Y RETROVISOR DIGITAL POR CABLE DE RED RJ45 -->
+          <div class="tech-card full-width" style="border: 2px solid var(--accent-black); margin-top: 14px;">
+            <div class="diagram-card-header">
+              <div>
+                <span class="tag tag-dc">Cabina Digital & Seguridad Vial</span>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--accent-black); margin-top: 6px;">
+                  🖥️ Sistema CarPC & Dashcam / Retrovisor Digital (USB sobre Cable de Red RJ45 Cat6)
+                </h3>
+              </div>
+              <span class="badge-success">Ahorro de ~$600 USD vs Dashcam Comercial</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 12px 0 20px 0; line-height: 1.6;">
+              Aprovechamiento integral del <strong>Portátil Táctil en el Millaré</strong> como Centro de Mando: Navegación GPS (Waze/Maps), Espejo Retrovisor Digital permanente para furgón ciego, Dashcam frontal y trasera con grabación cíclica en SSD, y monitoreo en vivo de las baterías 48V.
+            </p>
+
+            <!-- Diagrama Vectorial de la Topología USB sobre RJ45 -->
+            <div class="svg-diagram-wrapper">
+              <svg class="tech-svg" viewBox="0 0 920 250" xmlns="http://www.w3.org/2000/svg">
+                <!-- Portátil Táctil Cabina -->
+                <rect x="25" y="40" width="190" height="150" rx="8" fill="#ffffff" stroke="#09090b" stroke-width="2"/>
+                <rect x="35" y="50" width="170" height="100" rx="4" fill="#09090b"/>
+                <text x="120" y="85" font-family="'Outfit', sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">PORTÁTIL TÁCTIL</text>
+                <text x="120" y="103" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8" text-anchor="middle">Millaré Mazda T (14"-15")</text>
+                <text x="120" y="122" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">Waze + Retrovisor + OBS</text>
+                <rect x="50" y="158" width="140" height="22" rx="3" fill="#f1f5f9" stroke="#cbd5e1"/>
+                <text x="120" y="173" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#09090b" text-anchor="middle">Alimentador 12V PD 65W/100W</text>
+
+                <!-- Conexión USB a Adaptador Emisor -->
+                <path d="M 215 115 L 260 115" stroke="#09090b" stroke-width="3" fill="none"/>
+                <text x="238" y="107" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700">USB 2.0</text>
+
+                <!-- Adaptador Emisor USB a RJ45 -->
+                <rect x="260" y="85" width="95" height="60" rx="6" fill="#f8fafc" stroke="#09090b" stroke-width="1.8"/>
+                <text x="307" y="108" font-family="'Outfit', sans-serif" font-size="9" font-weight="800" fill="#09090b" text-anchor="middle">EXTENSOR TX</text>
+                <text x="307" y="123" font-family="'JetBrains Mono', monospace" font-size="8" fill="#64748b" text-anchor="middle">USB Macho ➔ RJ45</text>
+                <text x="307" y="136" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" fill="#15803d" text-anchor="middle">Sin drivers (UVC)</text>
+
+                <!-- Cable de Red UTP/STP Cat6 por Chasis -->
+                <path d="M 355 115 L 565 115" stroke="#0284c7" stroke-width="5" stroke-dasharray="7 3" fill="none"/>
+                <rect x="380" y="80" width="160" height="30" rx="4" fill="#0284c7"/>
+                <text x="460" y="96" font-family="'Outfit', sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">CABLE CAT6 STP (10–15 METROS)</text>
+                <text x="460" y="106" font-family="'JetBrains Mono', monospace" font-size="7" fill="#e0f2fe" text-anchor="middle">Blindado por larguero de chasis</text>
+                <text x="460" y="140" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#0284c7" text-anchor="middle">Cero caída de voltaje • 100% libre de interferencias diésel</text>
+
+                <!-- Adaptador Receptor RJ45 a USB -->
+                <rect x="565" y="85" width="95" height="60" rx="6" fill="#f8fafc" stroke="#09090b" stroke-width="1.8"/>
+                <text x="612" y="108" font-family="'Outfit', sans-serif" font-size="9" font-weight="800" fill="#09090b" text-anchor="middle">EXTENSOR RX</text>
+                <text x="612" y="123" font-family="'JetBrains Mono', monospace" font-size="8" fill="#64748b" text-anchor="middle">RJ45 ➔ USB Hembra</text>
+                <text x="612" y="136" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" fill="#15803d" text-anchor="middle">Bus 5V Estable</text>
+
+                <!-- Conexión a Cámara -->
+                <path d="M 660 115 L 705 115" stroke="#09090b" stroke-width="3" fill="none"/>
+
+                <!-- Cámara Trasera en Cola de Furgón -->
+                <rect x="705" y="45" width="185" height="140" rx="8" fill="#0f172a" stroke="#09090b" stroke-width="2"/>
+                <circle cx="797" cy="98" r="28" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <circle cx="797" cy="98" r="14" fill="#0284c7"/>
+                <text x="797" y="145" font-family="'Outfit', sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">WEBCAM / RETROVISOR</text>
+                <text x="797" y="160" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">Caja Estanca PETG 3D / IP68</text>
+                <text x="797" y="174" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#4ade80" text-anchor="middle">Gran Angular 120°–170°</text>
+
+                <!-- Pie de diagrama -->
+                <text x="460" y="222" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#09090b" text-anchor="middle">
+                  🔒 ARQUITECTURA DIGITAL: Soluciona el límite físico de 5m del estándar USB sin caídas de tensión
+                </text>
+              </svg>
+            </div>
+
+            <!-- 3 Columnas Técnicas: Cableado, Software y Blindaje de Cabina -->
+            <div class="technical-grid" style="margin-top: 24px;">
+              <!-- 1. Cable y Conectividad -->
+              <div class="tech-card">
+                <h4>🔌 Cableado y Conectividad por Chasis</h4>
+                <ul class="specs-list">
+                  <li><strong>Por qué falla el USB normal:</strong> El estándar USB 2.0/3.0 se degrada pasados los 5 metros (caída de 5V a 4.1V, desconexiones aleatorias en carretera).</li>
+                  <li><strong>Extensores USB sobre RJ45 (Par Balun):</strong> Adaptador pasivo/activo USB-RJ45 de $8–$10 USD. Permite distancias de 10m hasta 50 metros con cero latencia.</li>
+                  <li><strong>Cable recomendado:</strong> Cable de red <strong>Cat6 STP/FTP Blindado para exterior</strong> (con doble chaqueta PE negra resistente a sol, intemperie y salpicaduras de diésel).</li>
+                  <li><strong>Ruta de ruteo:</strong> Bajar desde el millaré por el pasamuros de goma (grommet) del cortafuegos, fijar con abrazaderas de nylon resistentes a UV cada 25 cm por el canal interior del larguero del chasis (lado opuesto al tubo de escape), y subir por la esquina trasera del furgón.</li>
+                </ul>
+              </div>
+
+              <!-- 2. Software y Grabación en Bucle -->
+              <div class="tech-card">
+                <h4>💾 Software & Automatización de Grabación</h4>
+                <ul class="specs-list">
+                  <li><strong>Software Recomendado A (Agent DVR / ContaCam):</strong> Programas gratuitos y ligeros para Windows con función nativa de <em>Loop Recording</em>. Graban clips continuos de 5 minutos y van eliminando automáticamente los videos más viejos cuando el SSD llega al 85% de capacidad.</li>
+                  <li><strong>Software Recomendado B (OBS Studio Optimizado):</strong>
+                    <br>• <strong>Formato obligatorio:</strong> Grabar siempre en <code>.mkv</code> o <code>.mp4 fragmentado</code>. Si apagas el camión de golpe, el archivo no se corrompe.
+                    <br>• <strong>Plugin Advanced Scene Switcher:</strong> Permite configurar teclas rápidas o detección de video para maximizar la cámara trasera al parquear.
+                  </li>
+                  <li><strong>Aceleración por Hardware:</strong> Configurar el codificador en <strong>Intel QuickSync / AMD VCE / NVENC</strong> para que el uso de CPU sea inferior al 5% y el portátil no se caliente.</li>
+                  <li><strong>Autoarranque:</strong> Añadir el software a la carpeta <code>Inicio</code> de Windows para que grabe solo sin intervención manual al encender la cabina.</li>
+                </ul>
+              </div>
+
+              <!-- 3. Blindaje de Cabina en Millaré -->
+              <div class="tech-card">
+                <h4>🛡️ Blindaje Mecánico & Térmico en Millaré</h4>
+                <ul class="specs-list">
+                  <li><strong>Modo Tablet 360°:</strong> Doblar el portátil convertible 360° en modo tableta apoyado plano sobre la base. Esto elimina por completo el cabeceo y la fatiga en las bisagras provocada por los muelles rígidos del Mazda T.</li>
+                  <li><strong>Aislamiento de Neopreno:</strong> Forrar la bandeja o mordaza del millaré con espuma de neopreno o caucho de 5 mm para absorber los armónicos de baja frecuencia del motor diésel.</li>
+                  <li><strong>Visera Solar Impresa en 3D:</strong> El vidrio panorámico concentra hasta 60°C. Diseñar una visera parasol impresa en <strong>PETG o ABS</strong> en la impresora Flsun V400 para mantener el chasis del portátil en sombra y evitar degradación térmica de la batería interna.</li>
+                  <li><strong>Alimentación Automática:</strong> Conectar un cargador de carro 12V con protocolo USB-C Power Delivery (PD 65W o 100W) a la línea de 12V de la cabina. Activar en BIOS la opción <em>"Power On on AC Attach"</em> para encendido automático con el switch.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -127,6 +127,27 @@ const OFFICIAL_VERIFIED_LINKS = [
     cat: "Internet / DC Directo",
     url: "https://www.amazon.com/-/es/gp/product/B0F1NLLD4J/ref=ewc_pr_img_3?smid=A3R3Z1TROCAHH6&psc=1",
     notes: "Amazon ASIN B0F1NLLD4J. Conexión directa a busbars de 48V con fusible de 5A. Ahorra 1.500 Wh diarios al operar con el inversor apagado."
+  },
+  {
+    id: 9,
+    title: "Victron Energy Orion-Tr Smart DC-DC 12/48V 8A (380W) Aislado",
+    cat: "Carga Alternador",
+    url: "https://www.amazon.com/-/es/gp/product/B0F9PJ2HBD/ref=ox_sc_act_title_2?smid=A35W7G02QU77CF&psc=1",
+    notes: "Amazon ASIN B0F9PJ2HBD (US$198.01). Carga la batería LiFePO4 MUST desde el alternador de 70A del motor diésel. Aislamiento galvánico y Bluetooth."
+  },
+  {
+    id: 10,
+    title: "Extensor USB 2.0 sobre Cable de Red RJ45 Cat5e/Cat6 (Hasta 50m)",
+    cat: "Cabina / Dashcam",
+    url: "https://www.amazon.com/s?k=usb+over+ethernet+extender+rj45",
+    notes: "Par de adaptadores USB a RJ45. Conecta la webcam delantera y retrovisor trasero de la camper sin caídas de voltaje en distancias de más de 10 metros."
+  },
+  {
+    id: 11,
+    title: "Cable de Red Cat6 STP Blindado para Exterior (Resistente UV y Grasa)",
+    cat: "Cableado Chasis",
+    url: "https://www.amazon.com/s?k=cat6+outdoor+shielded+cable",
+    notes: "Cable UTP/STP Cat6 con chaqueta impermeable para pasar por el canal interior del larguero del chasis del Mazda T."
   }
 ];
 

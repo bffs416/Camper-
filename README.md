@@ -36,7 +36,9 @@
    - **Ajuste por Minutos:** Chips rápidos (`0m`, `15m`, `30m`, `40m`, `1h`, `2h`, `4h`, `12h`, `24h`), botones `[-5m]` / `[+5m]` e input numérico.
    - **Presets Rápidos:** `[🔄 Todo a Cero]`, `[🏕️ Base 24/7]`, `[⚡ Día de Taller]`, `[🍳 Almuerzo Gourmet]`.
 5. **Capítulo 5: Tabla Maestra de Cargas (31 Equipos):** Potencias, amperajes a 48V, línea asignada y buscador instantáneo.
-6. **Capítulo 6: Blindaje Mecánico & Protecciones:** RETIE, tuercas de seguridad Nyloc, silentblocks M10, marcas de torque y cuadro de breakers.
+6. **Capítulo 6: Blindaje Mecánico, Protecciones & Cabina Digital:**
+   - RETIE, tuercas de seguridad Nyloc, silentblocks M10, marcas de torque y cuadro de breakers AC/DC.
+   - **Sistema CarPC & Dashcam / Retrovisor Digital:** Topología técnica de webcam por cable de red Cat6 STP (10–15m por chasis con balun USB-RJ45), software de grabación cíclica en SSD (Agent DVR / OBS .mkv), soporte antivibración y visera térmica 3D en millaré. Ahorro de ~$600 USD.
 7. **Capítulo 7: Carga Rápida 220V en Ruta:** Protocolo NEMA 14-30P para montallantas y estaciones de servicio.
 8. **Capítulo 8: Directorio de Proveedores Locales:** Proveedores verificados en Colombia (Ineldec, Ecozaque, Emergente Energía, Electrolux).
 9. **Capítulo 9: Banco de Enlaces, Fichas & Galería:** Enlaces directos a productos y fichas técnicas.
