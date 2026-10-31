@@ -20,7 +20,7 @@
 - **Generación Solar Techo (1.920 Wp):**
   - **Línea Principal (1.460 Wp):** 2x Paneles TOPCon Bifaciales OSDA 730W en serie (2S) al MPPT 80A integrado del MUST.
   - **Línea Secundaria (460 Wp):** 1x Panel Restar 460W conectado a controlador elevador MPPT Boost 500W (SmartSolar 48V).
-- **Carga Alternador en Carretera:** Cargador DC-DC Victron Orion-Tr Smart 12/48-8A (380W) con sensor de motor encendido.
+- **Carga Alternador en Carretera:** Cargador DC-DC Victron Orion-Tr Smart 12/48-8A (calibrado vía Bluetooth a 280W / ~22A para operar descansado al 45% de capacidad del alternador original Mazda T45LB Turbo 12V 50A con depresor "bomba grande").
 - **Protocolo de Carga Rápida 220V en Carretera:** Clavija industrial NEMA 14-30P con cable STW 4x10 AWG (15m) para talleres y montallantas en Colombia (carga completa en < 2.8 horas @ 40A DC).
 
 ---

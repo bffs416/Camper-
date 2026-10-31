@@ -133,7 +133,7 @@ const OFFICIAL_VERIFIED_LINKS = [
     title: "Victron Energy Orion-Tr Smart DC-DC 12/48V 8A (380W) Aislado",
     cat: "Carga Alternador",
     url: "https://www.amazon.com/-/es/gp/product/B0F9PJ2HBD/ref=ox_sc_act_title_2?smid=A35W7G02QU77CF&psc=1",
-    notes: "Amazon ASIN B0F9PJ2HBD (US$198.01). Carga la batería LiFePO4 MUST desde el alternador de 70A del motor diésel. Aislamiento galvánico y Bluetooth."
+    notes: "Amazon ASIN B0F9PJ2HBD (US$198.01). Carga la batería LiFePO4 MUST desde el alternador original 12V 50A (Bomba Grande) del Mazda T45LB. Calibrable vía Bluetooth a 280W (~22A) para operación descansada y segura."
   },
   {
     id: 10,
